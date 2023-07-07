@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+<name>Regulator</name>
+<version>1.0</version>
+<identifier></identifier>
+<!--image usage="dock" src="Resources/dock.png"/-->
+<image usage="security" src="Resources/images/security.png"/>
+<author name="Dean Beedell"/>
+<copyright>(c) 2016,2023 Dean Beedell</copyright>
+<description>A Steampunk Clock</description>
+<platform minVersion="4.5"/>
+	<security>
+		<http>all</http>
+		<command>true</command>
+		<filesystem>full</filesystem>
+	</security>
+</metadata>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?konfabulator xml-strict="true"?>
+<widget minimumVersion="4.5">
+	<!--
+	Regulator
+	Copyright 2016, 2023 Dean Beedell
+
+	This program is free software; you can redistribute it and/or modify it under
+	the terms of the GNU General Public License as published by the Free Software
+	Foundation; either version 2 of the License, or (at your option) any later
+	version.
+
+	This program is distributed in the hope that it will be useful, but WITHOUT ANY
+	WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+	PARTICULAR PURPOSE.	 See the GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License along with
+	this program; if not, write to the Free Software Foundation, Inc., 51 Franklin
+	St, Fifth Floor, Boston, MA	 02110-1301	 USA
+
+	Regulator Version 1.0
+	16 March, 2023
+	Copyright 2016, 2023 Dean Beedell
+	mailto:g6auc@arrl.net
+	-->
+
+	<settings>
+		<setting name="allowCustomObjectAttributes" value="true"/>
+		<setting name="debug" value="off"/>
+	</settings>
+
+	<about-box>
+		<image>Resources/images/about.png</image>
+		<about-version font="arial" color="#000000" vOffset="262" hOffset="330" size="12">
+			<shadow color="#ffffff" vOffset="1" hOffset="0"/>
+		</about-version>
+		<about-text font="arial" color="#000000" vOffset="262" hOffset="360" url="http://www.lightquick.co.uk" data="http://www.lightquick.co.uk" size="12">
+			<shadow color="#ffffff" vOffset="1" hOffset="0"/>
+		</about-text>
+	</about-box>
+
+	<window visible="false" title="Regulator" name="mainWindow"  title="Regulator Clock Widget" alignment="left" width="803" height="705" shadow="0">
+		<image name="background" width="710" height="630" onMultiClick="faceOnDblClick()"  hOffset="30" vOffset="14" src="Resources/images/Background_nostrap.png" zOrder="1"/>
+		<image name="surround" width="755" height="660" src="Resources/images/surround.png" hOffset="3" vOffset="1" zOrder="2"/>
+
+		<image name="startButton" width="171" height="184" vOffset="30"  onMouseDown="startButtonOnMouseDown()" src="Resources/images/startButton.png" onMouseUp="startButtonOnMouseUp()" hOffset="50" zOrder="3"/>
+		<image name="stopButton" width="113" height="174" vOffset="438"  src="Resources/images/stopButton.png" onMouseDown="stopButtonOnMouseDown()" onMouseUp="stopButtonOnMouseUp()" hOffset="42" zOrder="3"/>
+		<--image name="switchFacesButton" width="113" height="148" hOffset="4" vOffset="237" zOrder="3"/-->
+
+		<text name="dateText" anchorStyle="topLeft" width="62" height="46" size="41" hOffset="400" vOffset="450" font="Times New Roman" zOrder="2" data="31"/>
+
+		<image name="bigReflection" width="403" height="299" src="Resources/images/bigReflection.png" hOffset="168" vOffset="63" zOrder="8"/>
+		<image name="windowReflection2" width="123" height="111" src="Resources/images/windowReflection.png" hOffset="514" vOffset="219" zOrder="8"/>
+		<image name="windowReflection" width="121" height="110" src="Resources/images/windowReflection.png" hOffset="512" vOffset="214" opacity="92" zOrder="8"/>
+
+		<!--image name="smallWindowReflection" width="403" height="299" src="Resources/images/bigReflection.png" hOffset="395" vOffset="444"  zOrder="8"/-->
+
+		<image name="pin" width="40" height="40" hOffset="121" vOffset="206" src="Resources/images/pin.png"  onMouseDown="pinOnMouseDown()" opacity="3" tooltip="Click me to lock the widget in place." zOrder="9"/>
+		<image name="prefs" width="42" height="42" hOffset="120" vOffset="375" src="Resources/images/prefs01.png" onMouseDown="prefsOnMouseDown()" onMouseUp="prefsOnMouseUp()" tooltip="Press to open the widget's preferences." zOrder="9"/>
+ 		<image name="helpButton" width="41" height="41" zOrder="100" hOffset="598" vOffset="504"  src="Resources/images/helpButton.png" onMouseUp="helpButtonOnMouseUp()" onMouseDown="helpButtonOnMouseDown()" opacity="3" tooltip="Press for a little help." zOrder="9"/>
+		<image name="tickSwitch" width="40" height="40" hOffset="603" vOffset="74" src="Resources/images/pin.png"  onMouseDown="tickSwitchOnMouseDown()" opacity="148" onMouseUp="tickSwitchOnMouseUp()" tooltip="Choose smooth movement or regular ticks." zOrder="9"/>
+
+		<!--image name="hintsButton" width="33" height="32" hOffset="396" vOffset="91" src="Resources/images/bell.png" onMouseDown="hintsButtonOnMouseDown()" zOrder="9"/-->
+
+		<image name="regulatorHelp" width="750" height="624" hOffset="19" vOffset="12" onMouseDown="regulatorHelpOnMouseDown()" src="Resources/images/regulator-help-750.png" onMouseUp="regulatorHelpOnMouseUp()" visible="false" zOrder="0" />
+
+		<image name="hourHand" width="160" height="160" hOffset="525" vOffset="310" src="Resources/images/hour.png" hRegistrationPoint="80" vRegistrationPoint="90" rotation="90" zOrder="11"/>
+		<image name="hourShadow" width="160" height="160" hOffset="530" vOffset="310" src="Resources/images/HourShadow.png" hRegistrationPoint="80" vRegistrationPoint="90" rotation="90" zOrder="10"/>
+
+		<image name="minuteHand" width="175" height="175" hOffset="313" vOffset="298" src="Resources/images/Minute.png" hRegistrationPoint="90" vRegistrationPoint="106" rotation="45" zOrder="13"/>
+		<image name="minuteShadow" width="175" height="175" hOffset="318" vOffset="300" src="Resources/images/MinuteShadow.png" hRegistrationPoint="90" vRegistrationPoint="106" rotation="45" zOrder="12"/>
+
+		<image name="secondHand" width="23" height="318" hOffset="420" vOffset="316" hRegistrationPoint="11" vRegistrationPoint="245" rotation="0" src="Resources/images/Second.png" zOrder="15"/>
+		<image name="secondShadow" width="46" height="318" hOffset="425" vOffset="316" hRegistrationPoint="23" vRegistrationPoint="245" rotation="0" src="Resources/images/SecondShadow.png" zOrder="14"/>
+
+
+	</window>
+	
+	 <window visible="false" name="helpWindow" alignment="left" width="760" title="Regulator Widget HELP" height="630" >
+           <image src = "Resources/images/regulator-help-750.png" name = "tankHelp" visible = "true" />
+   </window>
+
+	<action trigger="onKeyDown">
+		<![CDATA[
+		if (system.event.keyCode === 116) {
+			print("Pressing F5 " + system.event.keyCode);
+			reloadWidget();
+		}
+		]]>
+	</action>
+
+	<preference hidden="true" description="Check this box if you don't want to see the Licence Conditions again." name="licenseHide" title="Don't Show Licence Again" defaultValue="0" type="checkbox"/>
+
+	<preference hidden="true" description="widgetLockedPref" name="widgetLockedPref" title="widgetLockedPref:" defaultValue="0" type="checkbox"/>
+	<preference hidden="true" description="hOffsetPref" name="hOffsetPref" title="hOffsetPref:" defaultValue="" type="text"/>
+	<preference hidden="true" description="vOffsetPref" name="vOffsetPref" title="vOffsetPref:" defaultValue="" type="text"/>
+
+	<prefGroup name="configuration" order="1" icon="Resources/images/Icon.png" title="Configuration"/>
+
+	<preference	 group="configuration" ticks="17" minLength="20" description="Adjust to a percentage of the original size. You can also use Ctrl+Mousewheel."
+		name="clockSize" maxLength="100" title="Clock Size:" defaultValue="50" type="slider">
+		<tickLabel>020</tickLabel>
+		<tickLabel>040</tickLabel>
+		<tickLabel>060</tickLabel>
+		<tickLabel>080</tickLabel>
+		<tickLabel>100</tickLabel>
+	</preference>
+
+	<preference hidden="false" group="configuration" description="The scroll-wheel resizing direction can be determined here." name="MouseWheelPref" title="Mouse Scroll Wheel" defaultValue="up" type="popup">
+		<option>up</option>
+		<option>down</option>
+	</preference>
+
+	<preference hidden="false" group="configuration" description="This widget makes sounds by default - you can enable or disable the sounds as you require." name="soundPref" title="Sound Control" defaultValue="enabled" type="popup">
+		<option>enabled</option>
+		<option>disabled</option>
+	</preference>
+
+    <preference hidden="false" group="configuration" description="The pointer can be set to smooth or flick, smooth uses more CPU." name="tickSwitchPref" title="Smooth Pointer Movement" defaultValue="smooth" type="popup">
+        <option>flick</option>
+        <optionValue>tick</optionValue>
+        <option>smooth</option>
+        <optionValue>smooth</optionValue>
+    </preference>
+
+   <prefGroup name="development" order="8" icon="Resources/images/development-icon.png" title="Development"/>
+   <preference hidden="false" description="Turning on the debugging will provide extra information in the debug window. To obtain the debug window press SHIFT+CTRL simultaneously whilst right clicking on the Yahoo widget systray icon, then select debug from the drop down menu. You will need to restart the widget properly rather than doing a simple restart for debugging information to appear." name="debugflgPref" group="development" title="Debug:" defaultValue="1" type="popup">
+        <option>Debug OFF</option>
+        <optionValue>0</optionValue>
+        <option>Debug ON</option>
+        <optionValue>1</optionValue>
+    </preference>   
+   <preference hidden="false" description="Default command to run when the gauge receives a double-click. %SystemRoot%/system32/perfmon.exe" name="imageCmdPref" group="development" title="Double-Click command" defaultValue="%SystemRoot%/system32/perfmon.exe" type="text"/>
+   <preference hidden="false" description="Development ONLY: Enter your editor path here along with any command line switches required to open this widget in the editor. This function only operates if the widget has been unpacked and DEBUG is ON. " name="imageEditPref" group="development" title="Default Editor:" defaultValue="" type="text"/>
+
+	<script src="script.js"/>
+
+</widget>
