@@ -4,18 +4,27 @@ Regulator Clock Yahoo Widget, written in Javascript for the Yahoo
 Widget (Konfabulator) Engine. Created for XP, Vista, Win7, 8, 10+ as well as the 
 Apple Mac.
 
+![regulator-photo-1000](https://github.com/yereverluvinunclebert/Regulator-Ywidget/assets/2788342/38a164ff-ceee-4b17-81a4-02a125341447)
+
 
 This Regulator Clock widget is an attractive dieselpunk Yahoo widget for your desktop. 
 It is a simple clock. Functional and gorgeous at the same time. This Widget is a 
 moveable widget that you can move anywhere  around the desktop as you require.
 
+![regulator-clock-500](https://github.com/yereverluvinunclebert/Regulator-Ywidget/assets/2788342/77e0639c-bf23-423e-827f-99d1a3869654)
+
+
 The widget can be resized - Hover the cursor over the widget. Press the CTRL key 
 and use your mousewheel up or down. The widget will resize dynamically.
+
+![regulator-help-650](https://github.com/yereverluvinunclebert/Regulator-Ywidget/assets/2788342/8c60f794-352f-4e94-984f-bb1abca08475)
 
 All javascript widgets need an engine to function, in this case the widget uses 
 the Yahoo Widget Konfabulator engine. The engine interprets the javascript and 
 creates the widget according to the XML description and using the images you 
 provide. 
+
+![regulator-about-650](https://github.com/yereverluvinunclebert/Regulator-Ywidget/assets/2788342/05d2ad99-e33e-43d0-b6b8-a9b5b9af7604)
 
 Built using: 
 
