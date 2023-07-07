@@ -56,7 +56,7 @@ Running the widget using a javascript engine frees javascript from running only
 within the captivity of a browser, you will now be able to run these widgets on 
 your Windows desktop as long as you have the correct widget engine installed.
 
- ![Icon](https://github.com/yereverluvinunclebert/Panzer-Clock-Ywidget/assets/2788342/332a7b59-abd6-4eac-857d-51dfe2d80af9)
+
  
 Instructions for running Yahoo widgets on Windows
 =================================================
